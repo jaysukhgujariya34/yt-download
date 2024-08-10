@@ -2,29 +2,24 @@
 
 import React, { useState, useEffect } from "react";
 import { Grid } from "semantic-ui-react";
-import { loadFull } from "tsparticles";
 import JsFileDownloader from "js-file-downloader";
-const ytdl = require("ytdl-core");
-
-import { formatTime, formatNumber } from "./utils";
-import ErrorMessage from "./components/ErrorMessage";
-import Footer from "./components/Footer";
-import VideoCard from "./components/VideoCard";
-import Loader from "./components/Loader";
 import {
   Image,
   Icon,
   Form as SemanticForm,
   ModalHeader,
   ModalContent,
-  ModalActions,
-  Button,
   Modal,
 } from "semantic-ui-react";
+import { formatTime, formatNumber } from "./utils";
+import ErrorMessage from "./components/ErrorMessage";
+import Footer from "./components/Footer";
+import VideoCard from "./components/VideoCard";
 import { Guide } from "./components/Guide";
 
+const ytdl = require("ytdl-core");
+
 const Page = () => {
-  const [isParticleLoading, setIsParticleLoading] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
   const [videoUrlError, setVideoUrlError] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
