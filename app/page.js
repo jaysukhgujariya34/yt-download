@@ -190,7 +190,7 @@ const Page = () => {
         open={ads}
         onClose={() => setAds(false)}
       >
-        <ModalHeader>Use Google's location service?</ModalHeader>
+        <ModalHeader>{`Use Google's location service?`}</ModalHeader>
         <ModalContent>
           <div
             style={{
